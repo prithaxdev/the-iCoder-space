@@ -82,6 +82,8 @@ const Projects = () => {
                 transition={{ duration: 0.4 }}
                 src={project.image}
                 alt={project.name}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
 

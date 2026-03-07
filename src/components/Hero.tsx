@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { PillButton, PillButtonOutline } from "@/components/ui/pill-button";
 import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { HERO } from "@/constants";
-import iCoderImg from "@/assets/icoder.png";
+import iCoderImg from "@/assets/icoder.webp";
 
 const Hero = () => {
   const { scrollTo } = useScrollNavigation();
@@ -85,6 +85,8 @@ const Hero = () => {
           width={480}
           height={480}
           alt="Pritha Karki"
+          fetchPriority="high"
+          decoding="async"
           className="dark:shadow-inset-black h-60 w-60 object-cover shadow-[0_0_0_6px_rgba(167,139,250,0.35),0_0_0_12px_rgba(236,72,153,0.14),0_20px_60px_rgba(0,0,0,0.1)] sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px]"
           style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
         />

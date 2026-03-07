@@ -1,8 +1,8 @@
-import projectImage1 from "@/assets/uat.fitapp.png";
-import projectImage2 from "@/assets/prithadev.png";
-import projectImage3 from "@/assets/project3.jpeg";
-import projectImage4 from "@/assets/project4.jpeg";
-import projectImage5 from "@/assets/project5.jpeg";
+import projectImage1 from "@/assets/uat.fitapp.webp";
+import projectImage2 from "@/assets/prithadev.webp";
+import projectImage3 from "@/assets/project3.webp";
+import projectImage4 from "@/assets/project4.webp";
+import projectImage5 from "@/assets/project5.webp";
 
 export interface NavLink {
   label: string;
