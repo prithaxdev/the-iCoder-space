@@ -51,7 +51,7 @@ const Contact = () => {
 
       sileo.success({
         title: "Message sent!",
-        description: "Thanks for reaching out — I'll get back to you soon.",
+        description: "Thanks for reaching out. I'll get back to you soon.",
         position: "top-right",
       });
       reset();

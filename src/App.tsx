@@ -1,5 +1,5 @@
 import { Toaster } from "sileo";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { ThemeProvider, useTheme } from "@/context/ThemeContext";
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
@@ -10,6 +10,12 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+
+const ThemedToaster = () => {
+  const { theme } = useTheme();
+  return <Toaster position="top-right" theme={theme} />;
+};
+
 const App = () => {
   return (
     <ThemeProvider>
@@ -49,7 +55,7 @@ const App = () => {
         </main>
 
         <ScrollToTop />
-        <Toaster position="bottom-right" />
+        <ThemedToaster />
       </div>
     </ThemeProvider>
   );
