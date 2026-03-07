@@ -85,6 +85,7 @@ const Hero = () => {
           width={480}
           height={480}
           alt="Pritha Karki"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="dark:shadow-inset-black h-60 w-60 object-cover shadow-[0_0_0_6px_rgba(167,139,250,0.35),0_0_0_12px_rgba(236,72,153,0.14),0_20px_60px_rgba(0,0,0,0.1)] sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px]"
