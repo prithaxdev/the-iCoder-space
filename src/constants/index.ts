@@ -1,5 +1,5 @@
-import projectImage1 from "@/assets/project1.jpeg";
-import projectImage2 from "@/assets/project2.jpeg";
+import projectImage1 from "@/assets/uat.fitapp.png";
+import projectImage2 from "@/assets/prithadev.png";
 import projectImage3 from "@/assets/project3.jpeg";
 import projectImage4 from "@/assets/project4.jpeg";
 import projectImage5 from "@/assets/project5.jpeg";
