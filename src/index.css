@@ -1,18 +1,169 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html,
-body {
-  height: 100%;
-  margin: 0;
+/* ── Class-based dark mode ────────────────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens — light mode (default) ────────────────────────── */
+:root {
+  --background: 0 0% 97%;
+  --foreground: 0 0% 9%;
+  --card: 0 0% 92%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 92%;
+  --popover-foreground: 0 0% 9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 88%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 88%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 0 0% 88%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 82%;
+  --input: 0 0% 82%;
+  --ring: 0 0% 40%;
+  --radius: 0.5rem;
 }
-body {
-  font-family: "Space Grotesk", sans-serif;
-  background: #000;
-  color: #fff;
+
+/* ── Design tokens — dark mode ────────────────────────────────────── */
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
 }
-.bg-img {
-  background-image: url("../src/assets/bg-img5.png");
+
+/* ── Tailwind v4 theme mapping ────────────────────────────────────── */
+@theme inline {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+
+  /* Profile animation */
+  --animate-profile-animate: profile_animate 8s ease-in-out infinite 1s;
+
+  /* Custom shadow */
+  --shadow-inset-black: inset 0 0 0 9px rgba(1, 1, 1, 1);
 }
+
+/* ── Keyframes ────────────────────────────────────────────────────── */
+@keyframes profile_animate {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* ── Base styles ──────────────────────────────────────────────────── */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ── Theme toggle: circular reveal via View Transitions API ────────── */
+@keyframes vt-reveal {
+  from { clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+  to   { clip-path: circle(200% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+}
+
+::view-transition-old(root) {
+  animation: none;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  animation: vt-reveal 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+/* ── Sheet / Dialog animation helpers ────────────────────────────── */
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slide-out-to-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+.animate-in  { animation-fill-mode: both; }
+.animate-out { animation-fill-mode: both; }
+.fade-in-0   { animation: fade-in 0.2s ease; }
+.fade-out-0  { animation: fade-out 0.2s ease; }
+.slide-in-from-right { animation: slide-in-from-right 0.3s ease; }
+.slide-out-to-right  { animation: slide-out-to-right 0.3s ease; }
+
+[data-state="open"].slide-in-from-right  { animation: slide-in-from-right 0.3s ease; }
+[data-state="closed"].slide-out-to-right { animation: slide-out-to-right 0.3s ease; }
+[data-state="open"].fade-in-0  { animation: fade-in 0.2s ease; }
+[data-state="closed"].fade-out-0 { animation: fade-out 0.2s ease; }

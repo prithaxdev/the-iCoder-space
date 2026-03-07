@@ -1,4 +1,32 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M58.3334 66.6666C62.1839 66.6666 65.3053 64.5347 65.3053 61.9047C65.3053 56.8186 65.362 54.7232 69.8123 51.6836C71.1737 50.7537 71.1737 49.2462 69.8123 48.3164C65.362 45.2768 65.3053 43.1814 65.3053 38.0952C65.3053 35.4653 62.1839 33.3333 58.3334 33.3333M41.6667 66.6666C37.8162 66.6666 34.6947 64.5347 34.6947 61.9047C34.6947 56.8186 34.638 54.7232 30.1877 51.6836C28.8263 50.7537 28.8263 49.2462 30.1877 48.3164C34.638 45.2768 34.6947 43.1814 34.6947 38.0952C34.6947 35.4653 37.8162 33.3333 41.6667 33.3333" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="50" cy="50" r="41.6667" stroke="black" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #09090b; }
+      .p  { fill: #fafafa; }
+      .k  { fill: rgba(250,250,250,0.52); }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f4f4f5; }
+      .p  { fill: #09090b; }
+      .k  { fill: rgba(9,9,11,0.52); }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <text
+    class="p"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="400"
+    font-size="22"
+    x="3.5"
+    y="24"
+  >P</text>
+  <text
+    class="k"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="900"
+    font-size="14"
+    x="17"
+    y="24"
+  >K</text>
 </svg>

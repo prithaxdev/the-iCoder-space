@@ -1,8 +1,7 @@
-# React + Vite
+# Pritha Karki | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with **React 19**, **TypeScript**, **Vite 6**, and **Tailwind CSS v4**.
 
-Currently, two official plugins are available:
+Features a dark/light theme toggle with circular reveal transition, animated UI components via Framer Motion, Zod-validated contact form powered by Web3Forms, and shadcn/ui components throughout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Stack:** React · TypeScript · Tailwind CSS v4 · Framer Motion · shadcn/ui · Zod · react-hook-form · Web3Forms
