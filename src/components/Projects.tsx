@@ -62,7 +62,7 @@ const ProjectLinks = ({
 
 const Projects = () => {
   return (
-    <section className="w-full pt-20" id="projects">
+    <section className="w-full py-8" id="projects">
       <SectionHeader title="Projects" />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

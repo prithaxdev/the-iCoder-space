@@ -4,9 +4,8 @@ import { BIO } from "@/constants";
 
 const Bio = () => {
   return (
-    <section className="flex w-full max-w-3xl flex-col gap-8 pt-20" id="bio">
+    <section className="flex w-full max-w-3xl flex-col gap-2 py-8" id="bio">
       <SectionHeader title="Bio" />
-
       <div className="space-y-5">
         {BIO.map((paragraph, index) => (
           <motion.p

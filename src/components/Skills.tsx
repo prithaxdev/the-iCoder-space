@@ -47,7 +47,7 @@ const rowVariants = {
 
 const Skills = () => {
   return (
-    <section className="w-full pt-20" id="skills">
+    <section className="w-full py-8" id="skills">
       <SectionHeader title="Skills" />
 
       <motion.div

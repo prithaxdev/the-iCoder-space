@@ -7,7 +7,7 @@ import { EXPERIENCES } from "@/constants";
 
 const WorkExperience = () => {
   return (
-    <section className="w-full pt-20" id="work">
+    <section className="w-full py-8" id="work">
       <SectionHeader title="Work Experience" />
 
       <div className="space-y-5">

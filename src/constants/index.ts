@@ -175,14 +175,14 @@ export const EXPERIENCES: Experience[] = [
     company: "Er-Sathi",
     duration: "February 2022 – December 2024",
     description:
-      "As a UI Designer at Er-Sathi, I create user-centered designs using Figma and other wireframing tools. I collaborate with teams to develop intuitive interfaces and conduct user research to enhance usability. My role involves iterating on designs based on feedback while maintaining brand consistency.",
+      "Designed user interfaces and wireframes using Figma while working closely with developers and product teams. Focused on improving usability, maintaining visual consistency, and creating clear design systems.",
   },
   {
     title: "Frontend Developer",
     company: "Panoptic Dataworks",
     duration: "October 2024 – Present",
     description:
-      "As a Frontend Developer at Panoptic Dataworks, I collaborate with senior developers and designers to implement responsive user interfaces using React and Tailwind CSS. I write modular components, assist in code reviews, fix bugs, and optimize performance. My responsibilities also include maintaining coding standards and continuously learning best practices to contribute to high-quality, scalable web applications.",
+      "Build and maintain responsive user interfaces using React and Tailwind CSS. Work with developers and designers to implement features, fix bugs, and improve performance while following clean coding practices.",
   },
 ];
 
