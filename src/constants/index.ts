@@ -57,9 +57,9 @@ export const NAVIGATION_LINKS: NavLink[] = [
 
 export const HERO = {
   name: "Pritha Karki",
-  greet: "Hello there! 👋🏻",
+  greet: "Hey 👋🏻",
   description:
-    "I am a passionate frontend developer with a knack for creating beautiful and functional user interfaces. I enjoy transforming ideas into engaging web experiences.",
+    "I’m a frontend developer who builds clean, responsive, and user-friendly websites. I enjoy turning ideas into simple and engaging web experiences.",
 };
 
 export const PROJECTS: Project[] = [
