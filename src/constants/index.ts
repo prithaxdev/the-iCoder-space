@@ -57,7 +57,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
 
 export const HERO = {
   name: "Pritha Karki",
-  greet: "Hey 👋🏻",
+  greet: "Hey 👋🏻, Myself",
   description:
     "I’m a frontend developer who builds clean, responsive, and user-friendly websites. I enjoy turning ideas into simple and engaging web experiences.",
 };
@@ -193,14 +193,14 @@ export const EDUCATION: Education[] = [
     institution: "National Examination Board (NEB), Nepal",
     duration: "2017 – 2019",
     description:
-      "Completed higher secondary education in the Humanities stream, focusing on literature, history, and social studies, and achieved top grades in core subjects.",
+      "Completed higher secondary education in the Humanities stream with subjects focused on literature, history, and social studies.",
   },
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Tribhuvan University",
     duration: "2021 – Running",
     description:
-      "Pursuing a degree in Computer Applications, focusing on software development, algorithms, and database management. Engaged in projects involving web development and collaborative coding.",
+      "Currently studying Computer Applications with a focus on programming, software development, algorithms, and database systems.",
   },
 ];
 
