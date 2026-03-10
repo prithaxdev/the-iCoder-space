@@ -107,9 +107,9 @@ export const PROJECTS: Project[] = [
 ];
 
 export const BIO: string[] = [
-  "I am a self-taught frontend developer specializing in React, Next.js, and Tailwind CSS. Over the past few years, I've honed my skills by building interactive and responsive web applications that delight users and solve real-world problems.",
-  "My passion lies in crafting clean, maintainable code and continuously learning emerging technologies to push the boundaries of web development.",
-  "Outside of coding, I enjoy collaborating with designers, contributing to open-source projects, and sharing knowledge with the developer community.",
+  "I’m a self-taught frontend developer who enjoys building modern web applications using React, Next.js, and Tailwind CSS. I focus on creating clean, responsive interfaces that are easy to use and visually simple.",
+  "I like writing organized code and continuously improving my development skills.",
+  "When I'm not coding, I enjoy collaborating with other developers, learning new technologies, and exploring ideas that improve how people interact with the web.",
 ];
 
 export const SKILLS: Skill[] = [
