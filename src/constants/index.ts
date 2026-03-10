@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     name: "FitApp.io",
     description:
-      "The worlds SMARTEST Fitness App. Delivering Automation & smart scalable solutions to fitness businesses",
+      "A smart fitness platform designed to help fitness businesses manage clients, automate tasks, and grow their services online.",
     image: projectImage1,
     siteUrl: "https://fitapp.io/",
   },
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     id: 2,
     name: "Personal Portfolio",
     description:
-      "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and work experience.",
+      "My personal portfolio built with React and Tailwind CSS to showcase my projects, skills, and experience as a frontend developer.",
     image: projectImage2,
     siteUrl: "https://prithadev.netlify.app/",
   },
@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
     id: 3,
     name: "Sensai: Career Coach Platform",
     description:
-      "An all-encompassing career coaching platform with tools for resume building, interview preparation, and job tracking. Features personalized onboarding, interactive dashboards, a markdown-based resume builder, mock interview modules, and cover letter generation.",
+      "A career development platform with tools for building resumes, preparing for interviews, and tracking job applications. It includes personalized onboarding, dashboards, and a resume builder.",
     image: projectImage3,
     githubLink: "https://github.com/getparas/sensai",
   },
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
     id: 4,
     name: "Barbershop Booking Application",
     description:
-      "A booking application that allows users to reserve seats for haircuts, beard trims, and styling services. Built with PHP, MySQL, JavaScript, and CSS, featuring real-time availability updates and seamless payment integration.",
+      "An online booking system for barbershops where users can schedule haircuts and grooming services with real-time availability.",
     image: projectImage4,
     githubLink: "https://github.com/getparas/barbershopBookingApplication",
   },
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     id: 5,
     name: "All Projects",
     description:
-      "A consolidated showcase of all personal and collaborative development projects spanning web applications, tools, and platforms.",
+      "A collection of all my personal and collaborative projects, including web apps, tools, and experiments.",
     image: projectImage5,
     githubLink: "https://github.com/prithaxdev",
   },
