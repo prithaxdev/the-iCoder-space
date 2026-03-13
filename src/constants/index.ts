@@ -3,6 +3,7 @@ import projectImage2 from "@/assets/prithadev.webp";
 import projectImage3 from "@/assets/project3.webp";
 import projectImage4 from "@/assets/project4.webp";
 import projectImage5 from "@/assets/project5.webp";
+import projectImage6 from "@/assets/zap.webp";
 
 export interface NavLink {
   label: string;
@@ -81,6 +82,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
+    name: "Zap: Make Your Links Shorter",
+    description:
+      "Zap turns any long URL into a short, shareable link in seconds. Free, fast, and no sign-up required.",
+    image: projectImage6,
+    siteUrl: "https://zap-it.vercel.app/",
+  },
+  {
+    id: 4,
     name: "Sensai: Career Coach Platform",
     description:
       "A career development platform with tools for building resumes, preparing for interviews, and tracking job applications. It includes personalized onboarding, dashboards, and a resume builder.",
@@ -88,7 +97,7 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/getparas/sensai",
   },
   {
-    id: 4,
+    id: 5,
     name: "Barbershop Booking Application",
     description:
       "An online booking system for barbershops where users can schedule haircuts and grooming services with real-time availability.",
@@ -97,7 +106,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: 5,
+    id: 6,
     name: "All Projects",
     description:
       "A collection of all my personal and collaborative projects, including web apps, tools, and experiments.",
