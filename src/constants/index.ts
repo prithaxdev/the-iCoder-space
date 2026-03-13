@@ -47,11 +47,11 @@ export interface SocialLink {
 }
 
 export const NAVIGATION_LINKS: NavLink[] = [
-  { label: "Projects", href: "#projects" },
   { label: "Bio", href: "#bio" },
-  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
   { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
