@@ -6,7 +6,7 @@ const ASSETS_DIR = "src/assets";
 const QUALITY = 82;
 
 const images = readdirSync(ASSETS_DIR).filter((f) =>
-  [".png", ".jpg", ".jpeg"].includes(extname(f).toLowerCase())
+  [".png", ".jpg", ".jpeg"].includes(extname(f).toLowerCase()),
 );
 
 for (const file of images) {
@@ -18,7 +18,9 @@ for (const file of images) {
 
   const after = statSync(output).size;
   const saved = (((before - after) / before) * 100).toFixed(1);
-  console.log(`${file} → .webp  ${(before / 1024).toFixed(0)}KB → ${(after / 1024).toFixed(0)}KB  (-${saved}%)`);
+  console.log(
+    `${file} → .webp  ${(before / 1024).toFixed(0)}KB → ${(after / 1024).toFixed(0)}KB  (-${saved}%)`,
+  );
 
   rmSync(input);
 }
