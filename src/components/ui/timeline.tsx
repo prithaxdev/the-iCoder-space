@@ -26,7 +26,7 @@ interface TimelineTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 interface TimelineBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Timeline = React.forwardRef<HTMLOListElement, TimelineProps>(
-  ({ children, className, variant = 'alternating', ...props }, ref) => {
+  ({ children, className, variant = 'alternating', ...props }, _ref) => {
     const containerRef = useRef<HTMLOListElement>(null);
 
     useGSAP(
@@ -79,7 +79,7 @@ const Timeline = React.forwardRef<HTMLOListElement, TimelineProps>(
 Timeline.displayName = 'Timeline';
 
 const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, ...props }, _ref) => {
     const itemRef = useRef<HTMLLIElement>(null);
 
     useGSAP(
