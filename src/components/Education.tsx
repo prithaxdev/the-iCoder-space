@@ -31,7 +31,7 @@ const Education = () => {
                         {edu.degree}
                         {edu.stream && (
                           <span className="ml-2 text-sm font-normal text-black/45 dark:text-white/45">
-                            — {edu.stream}
+                            - {edu.stream}
                           </span>
                         )}
                       </CardTitle>
