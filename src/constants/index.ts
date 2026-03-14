@@ -53,6 +53,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
   { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
+  { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ];
 

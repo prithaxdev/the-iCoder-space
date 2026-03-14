@@ -25,6 +25,7 @@
   --input: 0 0% 82%;
   --ring: 0 0% 40%;
   --radius: 0.5rem;
+  --brand: 343 74% 45%;
 }
 
 /* ── Design tokens — dark mode ────────────────────────────────────── */
@@ -48,6 +49,7 @@
   --border: 0 0% 14.9%;
   --input: 0 0% 14.9%;
   --ring: 0 0% 83.1%;
+  --brand: 343 72% 58%;
 }
 
 /* ── Tailwind v4 theme mapping ────────────────────────────────────── */
@@ -74,6 +76,7 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  --color-brand: hsl(var(--brand));
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
