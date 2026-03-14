@@ -53,6 +53,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
   { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
+  { label: "Process", href: "#process" },
   { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ];
@@ -211,6 +212,86 @@ export const EDUCATION: Education[] = [
     duration: "2021 – Running",
     description:
       "Currently studying Computer Applications with a focus on programming, software development, algorithms, and database systems.",
+  },
+];
+
+export interface ProcessStep {
+  step: string;
+  title: string;
+  iconName: string;
+  color: string;
+  description: string;
+  points: string[];
+}
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    step: "Step 01",
+    title: "Discover",
+    iconName: "Search",
+    color: "bg-brand/10 text-brand dark:bg-brand/20 dark:text-brand",
+    description:
+      "I start by deeply understanding the problem - user goals, constraints, and context. No code before clarity.",
+    points: [
+      "Define the core problem & success criteria",
+      "Research similar solutions & identify gaps",
+      "Align on scope before touching the keyboard",
+    ],
+  },
+  {
+    step: "Step 02",
+    title: "Plan",
+    iconName: "Map",
+    color:
+      "bg-orange-100 text-orange-600 dark:bg-orange-950 dark:text-orange-400",
+    description:
+      "With the problem understood, I map out the architecture - choosing the right tools and breaking complexity into manageable pieces.",
+    points: [
+      "Choose the right stack for the job",
+      "Sketch system architecture & data flow",
+      "Break down work into atomic, shippable tasks",
+    ],
+  },
+  {
+    step: "Step 03",
+    title: "Design",
+    iconName: "Paintbrush",
+    color:
+      "bg-violet-100 text-violet-600 dark:bg-violet-950 dark:text-violet-400",
+    description:
+      "Design isn't just visuals - it's thinking through UX flows, component hierarchy, and accessibility before writing a line of UI code.",
+    points: [
+      "Wireframe layouts & define component structure",
+      "Plan interaction states & edge cases",
+      "Ensure accessibility & responsive behaviour",
+    ],
+  },
+  {
+    step: "Step 04",
+    title: "Build",
+    iconName: "Code2",
+    color:
+      "bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400",
+    description:
+      "This is where ideas become reality. I write clean, typed, focused code - shipping in small increments and reviewing as I go.",
+    points: [
+      "Write typed, readable, maintainable code",
+      "Ship in small commits - each one shippable",
+      "Self-review & refactor before calling it done",
+    ],
+  },
+  {
+    step: "Step 05",
+    title: "Ship",
+    iconName: "Rocket",
+    color: "bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400",
+    description:
+      "Shipping is where the real feedback starts. I deploy, verify everything works in production, and keep iterating based on what users actually need.",
+    points: [
+      "Deploy and verify the app in production",
+      "Monitor performance & catch issues early",
+      "Gather feedback and plan the next iteration",
+    ],
   },
 ];
 

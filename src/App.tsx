@@ -8,6 +8,7 @@ import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import Process from "@/components/Process";
 import GithubContributions from "@/components/GithubContributions";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -51,6 +52,7 @@ const App = () => {
           <WorkExperience />
           <Education />
           <Skills />
+          <Process />
           <GithubContributions />
           <Contact />
           <Footer />
