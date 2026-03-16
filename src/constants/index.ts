@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
     description:
       "My personal portfolio built with React and Tailwind CSS to showcase my projects, skills, and experience as a frontend developer.",
     image: projectImage2,
-    siteUrl: "https://prithadev.netlify.app/",
+    siteUrl: "https://pritha.me/",
   },
   {
     id: 3,
