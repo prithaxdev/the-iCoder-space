@@ -4,6 +4,7 @@ import projectImage3 from "@/assets/project3.webp";
 import projectImage4 from "@/assets/project4.webp";
 import projectImage5 from "@/assets/project5.webp";
 import projectImage6 from "@/assets/zap.webp";
+import projectImage7 from "@/assets/cloudcast.webp";
 
 export interface NavLink {
   label: string;
@@ -92,6 +93,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
+    name: "CloudCast",
+    description:
+      "Real-time weather dashboard with hourly and 7-day forecasts, interactive charts, and location maps. ",
+    image: projectImage7,
+    siteUrl: "https://cloudcast-app.vercel.app/",
+  },
+  {
+    id: 5,
     name: "Sensai: Career Coach Platform",
     description:
       "A career development platform with tools for building resumes, preparing for interviews, and tracking job applications. It includes personalized onboarding, dashboards, and a resume builder.",
@@ -99,7 +108,7 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/getparas/sensai",
   },
   {
-    id: 5,
+    id: 6,
     name: "Barbershop Booking Application",
     description:
       "An online booking system for barbershops where users can schedule haircuts and grooming services with real-time availability.",
@@ -108,7 +117,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: 6,
+    id: 7,
     name: "All Projects",
     description:
       "A collection of all my personal and collaborative projects, including web apps, tools, and experiments.",
