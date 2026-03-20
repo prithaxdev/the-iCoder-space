@@ -1,11 +1,39 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { PillButton, PillButtonOutline } from "@/components/ui/pill-button";
 import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { HERO } from "@/constants";
 import iCoderImg from "@/assets/icoder.webp";
+import {
+  SiReact,
+  SiTypescript,
+  SiNodedotjs,
+} from "@icons-pack/react-simple-icons";
 
 const Hero = () => {
   const { scrollTo } = useScrollNavigation();
+
+  // 3D tilt — mouse tracking
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), {
+    stiffness: 200,
+    damping: 30,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), {
+    stiffness: 200,
+    damping: 30,
+  });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0);
+    mouseY.set(0);
+  }
 
   return (
     <section className="grid min-h-[calc(100vh-80px)] grid-cols-1 items-center gap-12 py-12 lg:grid-cols-2">
@@ -67,30 +95,87 @@ const Hero = () => {
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="order-1 flex justify-center lg:order-2 lg:p-4"
       >
-        <motion.img
-          animate={{
-            borderRadius: [
-              "60% 40% 30% 70% / 60% 30% 70% 40%",
-              "30% 60% 70% 40% / 50% 60% 30% 60%",
-              "60% 40% 30% 70% / 60% 30% 70% 40%",
-            ],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          src={iCoderImg}
-          width={480}
-          height={480}
-          alt="Pritha Karki"
-          loading="lazy"
-          fetchPriority="high"
-          decoding="async"
-          className="dark:shadow-inset-black h-60 w-60 object-cover shadow-[0_0_0_6px_rgba(167,139,250,0.35),0_0_0_12px_rgba(236,72,153,0.14),0_20px_60px_rgba(0,0,0,0.1)] sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px]"
-          style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
-        />
+        {/* Perspective wrapper — mouse events live here */}
+        <div
+          className="relative"
+          style={{ perspective: "900px" }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Dot grid background */}
+          <div
+            className="pointer-events-none absolute -inset-10 -z-10 rounded-3xl opacity-50 dark:opacity-40"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, hsl(var(--foreground) / 0.18) 1px, transparent 1px)",
+              backgroundSize: "22px 22px",
+            }}
+          />
+
+          {/* Brand aura — blurred color glow behind image */}
+          <div className="pointer-events-none absolute inset-0 -z-10 m-auto h-3/4 w-3/4 rounded-full bg-brand/30 blur-3xl dark:bg-brand/20" />
+
+          {/* 3D tilt container */}
+          <motion.div
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className="relative"
+          >
+            {/* Image */}
+            <img
+              src={iCoderImg}
+              width={480}
+              height={480}
+              alt="Pritha Karki"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="h-60 w-60 rounded-2xl object-cover shadow-2xl shadow-black/15 ring-1 ring-black/8 sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px] dark:shadow-black/50 dark:ring-white/8"
+            />
+
+            {/* Floating card: Available for work — bottom right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.0, duration: 0.5, ease: "backOut" }}
+              className="absolute -bottom-5 -right-4 flex items-center gap-2 rounded-full border border-black/8 bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95 sm:-bottom-6 sm:-right-6"
+            >
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="text-xs font-medium text-zinc-700 dark:text-zinc-300">
+                Available for work
+              </span>
+            </motion.div>
+
+            {/* Floating card: Experience — top left (desktop only) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2, duration: 0.5, ease: "backOut" }}
+              className="absolute -left-8 -top-5 rounded-xl border border-black/8 bg-white/95 px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+            >
+              <p className="text-[10px] leading-none text-zinc-400 dark:text-zinc-500">
+                Experience
+              </p>
+              <p className="mt-0.5 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+                2+ Years
+              </p>
+            </motion.div>
+
+            {/* Floating card: Tech stack icons — right side (desktop only) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.4, duration: 0.5, ease: "backOut" }}
+              className="absolute -right-8 top-10 flex flex-col items-center gap-2.5 rounded-xl border border-black/8 bg-white/95 p-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+            >
+              <SiReact size={16} style={{ color: "#61DAFB" }} />
+              <SiTypescript size={16} style={{ color: "#3178C6" }} />
+              <SiNodedotjs size={16} style={{ color: "#339933" }} />
+            </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
