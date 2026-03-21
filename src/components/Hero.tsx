@@ -54,13 +54,12 @@ const Hero = () => {
             {HERO.greet}
           </motion.p>
 
-          {/* Instrument Serif italic for the name — eye-catching display text */}
           <h1
-            className="text-5xl leading-tight md:text-6xl lg:text-7xl xl:text-[6rem] xl:leading-[1.05]"
+            className="text-5xl leading-tight tracking-wide md:text-6xl lg:text-7xl xl:text-[6rem] xl:leading-[1.05]"
             style={{
               fontFamily: "var(--font-serif)",
               fontStyle: "italic",
-              fontWeight: 400,
+              fontWeight: 700,
             }}
           >
             {HERO.name}
@@ -113,7 +112,7 @@ const Hero = () => {
           />
 
           {/* Brand aura — blurred color glow behind image */}
-          <div className="pointer-events-none absolute inset-0 -z-10 m-auto h-3/4 w-3/4 rounded-full bg-brand/30 blur-3xl dark:bg-brand/20" />
+          <div className="bg-brand/30 dark:bg-brand/20 pointer-events-none absolute inset-0 -z-10 m-auto h-3/4 w-3/4 rounded-full blur-3xl" />
 
           {/* 3D tilt container */}
           <motion.div
@@ -129,7 +128,7 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="h-60 w-60 rounded-2xl object-cover shadow-2xl shadow-black/15 ring-1 ring-black/8 sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px] dark:shadow-black/50 dark:ring-white/8"
+              className="h-60 w-60 rounded-2xl object-cover shadow-2xl ring-1 shadow-black/15 ring-black/8 sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px] dark:shadow-black/50 dark:ring-white/8"
             />
 
             {/* Floating card: Available for work — bottom right */}
@@ -137,7 +136,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.0, duration: 0.5, ease: "backOut" }}
-              className="absolute -bottom-5 -right-4 flex items-center gap-2 rounded-full border border-black/8 bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95 sm:-bottom-6 sm:-right-6"
+              className="absolute -right-4 -bottom-5 flex items-center gap-2 rounded-full border border-black/8 bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm sm:-right-6 sm:-bottom-6 dark:border-white/10 dark:bg-zinc-900/95"
             >
               <span className="relative flex h-2 w-2 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -153,7 +152,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.5, ease: "backOut" }}
-              className="absolute -left-8 -top-5 rounded-xl border border-black/8 bg-white/95 px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+              className="absolute -top-5 -left-8 rounded-xl border border-black/8 bg-white/95 px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
             >
               <p className="text-[10px] leading-none text-zinc-400 dark:text-zinc-500">
                 Experience
@@ -168,7 +167,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.5, ease: "backOut" }}
-              className="absolute -right-8 top-10 flex flex-col items-center gap-2.5 rounded-xl border border-black/8 bg-white/95 p-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+              className="absolute top-10 -right-8 flex flex-col items-center gap-2.5 rounded-xl border border-black/8 bg-white/95 p-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
             >
               <SiReact size={16} style={{ color: "#61DAFB" }} />
               <SiTypescript size={16} style={{ color: "#3178C6" }} />

@@ -16,11 +16,11 @@ const SectionHeader = ({ title, className }: SectionHeaderProps) => {
       className={cn("mb-10 text-center", className)}
     >
       <h2
-        className="text-4xl tracking-tight md:text-5xl"
+        className="text-4xl tracking-wide md:text-5xl"
         style={{
           fontFamily: "var(--font-serif)",
           fontStyle: "italic",
-          fontWeight: 400,
+          fontWeight: 700,
         }}
       >
         {title}
