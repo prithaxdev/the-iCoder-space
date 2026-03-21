@@ -45,7 +45,7 @@ const App = () => {
 
         <NavBar />
 
-        <main className="relative z-10 container mx-auto flex max-w-5xl flex-col items-center px-4 pt-20">
+        <main className="relative z-10 container mx-auto flex max-w-6xl flex-col items-center px-4 pt-20">
           <Hero />
           <Bio />
           <Projects />
