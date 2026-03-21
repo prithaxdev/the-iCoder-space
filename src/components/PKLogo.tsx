@@ -3,7 +3,7 @@ const PKLogo = () => (
     <span
       className="text-foreground text-[1.6rem] leading-none"
       style={{
-        fontFamily: "var(--font-serif)",
+        fontFamily: "Instrument Serif",
         fontStyle: "italic",
         fontWeight: 400,
       }}
