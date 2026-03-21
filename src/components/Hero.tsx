@@ -128,7 +128,7 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="h-60 w-60 rounded-2xl object-cover shadow-2xl ring-1 shadow-black/15 ring-black/8 sm:h-72 sm:w-72 lg:h-[400px] lg:w-[400px] xl:h-[460px] xl:w-[460px] dark:shadow-black/50 dark:ring-white/8"
+              className="h-60 w-60 rounded-2xl object-cover shadow-2xl ring-1 shadow-black/15 ring-black/8 sm:h-72 sm:w-72 lg:h-100 lg:w-100 xl:h-115 xl:w-115 dark:shadow-black/50 dark:ring-white/8"
             />
 
             {/* Floating card: Available for work — bottom right */}
