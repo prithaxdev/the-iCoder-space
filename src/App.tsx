@@ -12,6 +12,20 @@ import Process from "@/components/Process";
 import GithubContributions from "@/components/GithubContributions";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollProgressIndicator, {
+  type ScrollSection,
+} from "@/components/ScrollProgressIndicator";
+
+const PAGE_SECTIONS: ScrollSection[] = [
+  { id: "bio", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "work", label: "Experience" },
+  { id: "education", label: "Education" },
+  { id: "skills", label: "Skills" },
+  { id: "process", label: "Process" },
+  { id: "github", label: "GitHub" },
+  { id: "contact", label: "Contact" },
+];
 
 const ThemedToaster = () => {
   const { theme } = useTheme();
@@ -58,6 +72,7 @@ const App = () => {
           <Footer />
         </main>
 
+        <ScrollProgressIndicator sections={PAGE_SECTIONS} />
         <ScrollToTop />
         <ThemedToaster />
       </div>
