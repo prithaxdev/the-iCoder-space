@@ -28,9 +28,9 @@ const MARKER: Record<
   MarkerState,
   { width: number; height: number; opacity: number }
 > = {
-  active: { width: 28, height: 3, opacity: 1 },
-  completed: { width: 18, height: 3, opacity: 0.55 },
-  upcoming: { width: 12, height: 2, opacity: 0.2 },
+  active: { width: 30, height: 2, opacity: 1 },
+  completed: { width: 20, height: 2, opacity: 0.55 },
+  upcoming: { width: 14, height: 1, opacity: 0.2 },
 };
 
 const HOVER_WIDTH: Record<MarkerState, number> = {
