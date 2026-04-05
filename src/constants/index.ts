@@ -1,10 +1,12 @@
-import projectImage1 from "@/assets/uat.fitapp.webp";
-import projectImage2 from "@/assets/pritha_me.webp";
-import projectImage3 from "@/assets/project3.webp";
-import projectImage4 from "@/assets/project4.webp";
-import projectImage5 from "@/assets/project5.webp";
-import projectImage6 from "@/assets/zap.webp";
-import projectImage7 from "@/assets/cloudcast.webp";
+import {
+  projectImage1,
+  projectImage2,
+  projectImage3,
+  projectImage4,
+  projectImage5,
+  projectImage6,
+  projectImage7,
+} from "@/assets";
 
 export interface NavLink {
   label: string;
