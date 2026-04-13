@@ -15,6 +15,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ScrollProgressIndicator, {
   type ScrollSection,
 } from "@/components/ScrollProgressIndicator";
+import { CursorProvider, Cursor, CursorFollow } from "@/components/unlumen-ui/cursor";
 
 const PAGE_SECTIONS: ScrollSection[] = [
   { id: "bio", label: "About" },
@@ -35,6 +36,9 @@ const ThemedToaster = () => {
 const App = () => {
   return (
     <ThemeProvider>
+      <CursorProvider global className="contents">
+      <Cursor />
+      <CursorFollow>Developer</CursorFollow>
       <div className="relative min-h-screen overflow-x-hidden antialiased">
         {/* Crimson gradient background — only visible in dark mode */}
         <div className="fixed inset-0 -z-10 opacity-0 transition-opacity duration-500 dark:opacity-100">
@@ -76,6 +80,7 @@ const App = () => {
         <ScrollToTop />
         <ThemedToaster />
       </div>
+      </CursorProvider>
     </ThemeProvider>
   );
 };
