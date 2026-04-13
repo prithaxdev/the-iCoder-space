@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SectionHeader from "@/components/SectionHeader";
+import { Tilt } from "@/components/unlumen-ui/tilt";
+import { ClippedCircle } from "@/components/unlumen-ui/clipped-circle";
 import { EDUCATION } from "@/constants";
 
 const Education = () => {
@@ -19,7 +21,11 @@ const Education = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
           >
-            <Card className="group border-black/10 bg-black/3 backdrop-blur-sm transition-all duration-300 hover:bg-black/5 dark:border-white/10 dark:bg-white/3 dark:hover:bg-white/6">
+            <Tilt
+              rotationFactor={5}
+              springOptions={{ stiffness: 400, damping: 25 }}
+              className="group relative w-full overflow-hidden rounded-xl border border-black/10 bg-black/3 backdrop-blur-sm transition-all duration-300 hover:bg-black/5 dark:border-white/10 dark:bg-white/3 dark:hover:bg-white/6"
+            >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
@@ -53,7 +59,11 @@ const Education = () => {
                   {edu.description}
                 </p>
               </CardContent>
-            </Card>
+              <ClippedCircle
+                circleClassName="bg-black/20 dark:bg-white"
+                circleSize={600}
+              />
+            </Tilt>
           </motion.div>
         ))}
       </div>
