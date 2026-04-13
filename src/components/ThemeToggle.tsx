@@ -1,43 +1,69 @@
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import { cn } from "@/lib/utils";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons";
 
-const ThemeIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={cn("size-4", className)}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-    <path d="M12 3l0 18" />
-    <path d="M12 9l4.65 -4.65" />
-    <path d="M12 14.3l7.37 -7.37" />
-    <path d="M12 19.6l8.85 -8.85" />
-  </svg>
+const ThemeIcon = ({
+  className,
+  isDark,
+}: {
+  className?: string;
+  isDark: boolean;
+}) => (
+  <HugeiconsIcon
+    icon={isDark ? Sun03Icon : Moon02Icon}
+    size={18}
+    strokeWidth={1.8}
+    className={cn(className)}
+  />
 );
 
 const ThemeToggle = ({ className }: { className?: string }) => {
-  const { toggle } = useTheme();
+  const { theme, toggle } = useTheme();
+  const [previewTheme, setPreviewTheme] = useState<"light" | "dark" | null>(
+    null,
+  );
+  const [isSwitching, setIsSwitching] = useState(false);
+  const switchTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (switchTimeoutRef.current !== null) {
+        window.clearTimeout(switchTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const iconTheme = previewTheme ?? theme;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (isSwitching) return;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.round(rect.left + rect.width / 2);
     const y = Math.round(rect.top + rect.height / 2);
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
     document.documentElement.style.setProperty("--vt-x", `${x}px`);
     document.documentElement.style.setProperty("--vt-y", `${y}px`);
-    toggle();
+
+    setPreviewTheme(nextTheme);
+    setIsSwitching(true);
+
+    switchTimeoutRef.current = window.setTimeout(() => {
+      toggle();
+      setIsSwitching(false);
+      setPreviewTheme(null);
+      switchTimeoutRef.current = null;
+    }, 220);
   };
 
   return (
     <button
       onClick={handleClick}
+      disabled={isSwitching}
       aria-label="Toggle theme"
       className={cn(
         "flex h-9 w-9 items-center justify-center rounded-full",
@@ -49,7 +75,18 @@ const ThemeToggle = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      <ThemeIcon />
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={iconTheme}
+          initial={{ opacity: 0, scale: 0.65, rotate: -80 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          exit={{ opacity: 0, scale: 0.65, rotate: 80 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="inline-flex"
+        >
+          <ThemeIcon isDark={iconTheme === "dark"} />
+        </motion.span>
+      </AnimatePresence>
     </button>
   );
 };
