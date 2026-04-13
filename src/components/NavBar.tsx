@@ -20,7 +20,7 @@ import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { NAVIGATION_LINKS, SOCIAL_MEDIA_LINKS } from "@/constants";
 import PKLogo from "@/components/PKLogo";
-import ThemeToggle from "@/components/ThemeToggle";
+import { ThemeSwitch } from "@/components/unlumen-ui/theme-switch";
 
 const socialIconMap: Record<string, React.ElementType> = {
   GitHub: Github,
@@ -133,13 +133,13 @@ const NavBar = () => {
 
         {/* Desktop right side: theme toggle + CTA */}
         <div className="hidden items-center gap-2 lg:flex">
-          <ThemeToggle />
+          <ThemeSwitch />
           <ConnectButton />
         </div>
 
         {/* Mobile: theme toggle + menu trigger */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
+          <ThemeSwitch />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <button
