@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import { cn } from "@/lib/utils";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeIcon = ({
   className,
@@ -11,14 +10,10 @@ const ThemeIcon = ({
 }: {
   className?: string;
   isDark: boolean;
-}) => (
-  <HugeiconsIcon
-    icon={isDark ? Sun03Icon : Moon02Icon}
-    size={18}
-    strokeWidth={1.8}
-    className={cn(className)}
-  />
-);
+}) => {
+  const Icon = isDark ? Sun : Moon;
+  return <Icon size={18} strokeWidth={1.8} className={cn(className)} />;
+};
 
 const ThemeToggle = ({ className }: { className?: string }) => {
   const { theme, toggle } = useTheme();
