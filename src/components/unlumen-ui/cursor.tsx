@@ -130,7 +130,7 @@ function CursorFollow({
     >
       <motion.div
         className={cn(
-          "bg-foreground text-background rounded-md px-2 py-1 text-sm",
+          "bg-foreground text-background squircle px-2 py-1 text-sm",
           className,
         )}
         style={{

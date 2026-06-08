@@ -103,7 +103,7 @@ const Hero = () => {
         >
           {/* Dot grid background */}
           <div
-            className="pointer-events-none absolute -inset-10 -z-10 rounded-3xl opacity-50 dark:opacity-40"
+            className="squircle pointer-events-none absolute -inset-10 -z-10 opacity-50 dark:opacity-40"
             style={{
               backgroundImage:
                 "radial-gradient(circle, hsl(var(--foreground) / 0.18) 1px, transparent 1px)",
@@ -112,7 +112,7 @@ const Hero = () => {
           />
 
           {/* Brand aura — blurred color glow behind image */}
-          <div className="bg-brand/30 dark:bg-brand/20 pointer-events-none absolute inset-0 -z-10 m-auto h-3/4 w-3/4 rounded-full blur-3xl" />
+          <div className="bg-brand/30 dark:bg-brand/20 squircle pointer-events-none absolute inset-0 -z-10 m-auto h-3/4 w-3/4 blur-3xl" />
 
           {/* 3D tilt container */}
           <motion.div
@@ -128,7 +128,7 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="h-60 w-60 rounded-2xl object-cover shadow-2xl ring-1 shadow-black/15 ring-black/8 sm:h-72 sm:w-72 lg:h-100 lg:w-100 xl:h-115 xl:w-115 dark:shadow-black/50 dark:ring-white/8"
+              className="squircle h-60 w-60 object-cover shadow-2xl ring-1 shadow-black/15 ring-black/8 sm:h-72 sm:w-72 lg:h-100 lg:w-100 xl:h-115 xl:w-115 dark:shadow-black/50 dark:ring-white/8"
             />
 
             {/* Floating card: Available for work — bottom right */}
@@ -136,12 +136,8 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.0, duration: 0.5, ease: "backOut" }}
-              className="absolute -right-4 -bottom-5 flex items-center gap-2 rounded-full border border-black/8 bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm sm:-right-6 sm:-bottom-6 dark:border-white/10 dark:bg-zinc-900/95"
+              className="squircle absolute -right-4 -bottom-5 flex items-center gap-2 border border-black/8 bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm sm:-right-6 sm:-bottom-6 dark:border-white/10 dark:bg-zinc-900/95"
             >
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
               <span className="text-xs font-medium text-zinc-700 dark:text-zinc-300">
                 Available for work
               </span>
@@ -152,7 +148,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.5, ease: "backOut" }}
-              className="absolute -top-5 -left-8 rounded-xl border border-black/8 bg-white/95 px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+              className="squircle absolute -top-5 -left-8 border border-black/8 bg-white/95 px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
             >
               <p className="text-[10px] leading-none text-zinc-400 dark:text-zinc-500">
                 Experience
@@ -167,7 +163,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.5, ease: "backOut" }}
-              className="absolute top-10 -right-8 flex flex-col items-center gap-2.5 rounded-xl border border-black/8 bg-white/95 p-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+              className="squircle absolute top-10 -right-8 flex flex-col items-center gap-2.5 border border-black/8 bg-white/95 p-2.5 shadow-lg shadow-black/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
             >
               <SiReact size={16} style={{ color: "#61DAFB" }} />
               <SiTypescript size={16} style={{ color: "#3178C6" }} />

@@ -24,12 +24,12 @@ const Education = () => {
             <Tilt
               rotationFactor={5}
               springOptions={{ stiffness: 400, damping: 25 }}
-              className="group relative w-full overflow-hidden rounded-xl border border-black/10 bg-black/3 backdrop-blur-sm transition-all duration-300 hover:bg-black/5 dark:border-white/10 dark:bg-white/3 dark:hover:bg-white/6"
+              className="group squircle relative w-full overflow-hidden border border-black/10 bg-black/3 backdrop-blur-sm transition-all duration-300 hover:bg-black/5 dark:border-white/10 dark:bg-white/3 dark:hover:bg-white/6"
             >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-lg border border-black/10 bg-black/8 p-2 transition-colors group-hover:bg-black/12 dark:border-white/10 dark:bg-white/8 dark:group-hover:bg-white/12">
+                    <div className="squircle border border-black/10 bg-black/8 p-2 transition-colors group-hover:bg-black/12 dark:border-white/10 dark:bg-white/8 dark:group-hover:bg-white/12">
                       <GraduationCap className="h-4 w-4 text-black/70 dark:text-white/70" />
                     </div>
                     <div>

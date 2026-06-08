@@ -45,11 +45,11 @@ const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 // Contribution level colors — uses portfolio brand (crimson) for levels 1–4
 // Dark mode uses higher opacity so low-level cells remain visible on the dark background
 const CONTRIBUTION_COLORS = [
-  "bg-black/8 dark:bg-white/10",      // Level 0 - No contributions
-  "bg-brand/25 dark:bg-brand/45",     // Level 1
-  "bg-brand/50 dark:bg-brand/65",     // Level 2
-  "bg-brand/75 dark:bg-brand/82",     // Level 3
-  "bg-brand",                          // Level 4 - Max
+  "bg-black/8 dark:bg-white/10", // Level 0 - No contributions
+  "bg-brand/25 dark:bg-brand/45", // Level 1
+  "bg-brand/50 dark:bg-brand/65", // Level 2
+  "bg-brand/75 dark:bg-brand/82", // Level 3
+  "bg-brand", // Level 4 - Max
 ];
 
 const LEVEL_0 = 0;
@@ -65,7 +65,7 @@ const isDateInValidRange = (
   currentDate: Date,
   startDate: Date,
   endDate: Date,
-  targetYear: number
+  targetYear: number,
 ) => {
   const isInRange = currentDate >= startDate && currentDate <= endDate;
   const isPreviousYearDecember =
@@ -79,7 +79,7 @@ const isDateInValidRange = (
 
 const createDayData = (
   currentDate: Date,
-  contributionData: ContributionData[]
+  contributionData: ContributionData[],
 ): ContributionData => {
   const dateString = currentDate.toISOString().split("T")[0];
   const existingData = contributionData.find((d) => d.date === dateString);
@@ -198,7 +198,7 @@ export function ContributionGraph({
       for (let day = 0; day < DAYS_IN_WEEK; day++) {
         const currentDate = new Date(firstSunday);
         currentDate.setDate(
-          firstSunday.getDate() + weekNum * DAYS_IN_WEEK + day
+          firstSunday.getDate() + weekNum * DAYS_IN_WEEK + day,
         );
 
         if (isDateInValidRange(currentDate, startDate, endDate, year)) {
@@ -253,7 +253,7 @@ export function ContributionGraph({
               <td className="w-7 min-w-7" />
               {monthHeaders.map((header) => (
                 <td
-                  className="relative text-left text-foreground"
+                  className="text-foreground relative text-left"
                   colSpan={header.colspan}
                   key={`${header.month}-${header.startWeek}`}
                 >
@@ -266,7 +266,7 @@ export function ContributionGraph({
           <tbody>
             {Array.from({ length: DAYS_IN_WEEK }, (_, dayIndex) => (
               <tr className="h-2.5" key={DAYS[dayIndex]}>
-                <td className="relative w-7 min-w-7 text-foreground">
+                <td className="text-foreground relative w-7 min-w-7">
                   {dayIndex % 2 === 0 && (
                     <span className="absolute -bottom-0.5 left-0 text-xs">
                       {DAYS[dayIndex]}
@@ -298,7 +298,7 @@ export function ContributionGraph({
                       }
                     >
                       <div
-                        className={`h-2.5 w-2.5 rounded-sm ${CONTRIBUTION_COLORS[dayData.level]} hover:ring-2 hover:ring-background`}
+                        className={`h-2.5 w-2.5 rounded-sm ${CONTRIBUTION_COLORS[dayData.level]} hover:ring-background hover:ring-2`}
                       />
                     </td>
                   );
@@ -311,14 +311,18 @@ export function ContributionGraph({
 
       {showTooltips && hoveredDay && (
         <motion.div
-          animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-          className="pointer-events-none fixed z-50 rounded-lg border border-border bg-secondary px-3 py-2 text-foreground text-sm shadow-lg"
+          animate={
+            shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+          }
+          className="squircle border-border bg-secondary text-foreground pointer-events-none fixed z-50 border px-3 py-2 text-sm shadow-lg"
           exit={
             shouldReduceMotion
               ? { opacity: 0, transition: { duration: 0 } }
               : { opacity: 0, scale: 0.8 }
           }
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.8 }}
+          initial={
+            shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.8 }
+          }
           style={{
             left: tooltipPosition.x + TOOLTIP_OFFSET_X,
             top: tooltipPosition.y - TOOLTIP_OFFSET_Y,
@@ -328,17 +332,19 @@ export function ContributionGraph({
           <div className="font-semibold">
             {getContributionText(hoveredDay.count)}
           </div>
-          <div className="text-foreground/70">{formatDate(hoveredDay.date)}</div>
+          <div className="text-foreground/70">
+            {formatDate(hoveredDay.date)}
+          </div>
         </motion.div>
       )}
 
       {showLegend && (
-        <div className="mt-4 flex items-center justify-between text-foreground/70 text-xs">
+        <div className="text-foreground/70 mt-4 flex items-center justify-between text-xs">
           <span>Less</span>
           <div className="flex items-center gap-1">
             {CONTRIBUTION_LEVELS.map((level) => (
               <div
-                className={`h-3 w-3 rounded-sm ${CONTRIBUTION_COLORS[level]}`}
+                className={`squircle h-3 w-3 ${CONTRIBUTION_COLORS[level]}`}
                 key={level}
               />
             ))}

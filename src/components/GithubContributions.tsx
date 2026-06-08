@@ -27,7 +27,7 @@ const GithubContributions = () => {
     setLoading(true);
     setError(false);
     fetch(
-      `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=${year}`
+      `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=${year}`,
     )
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
@@ -50,7 +50,7 @@ const GithubContributions = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="overflow-hidden rounded-2xl border border-black/10 bg-black/3 px-5 py-6 sm:px-6 dark:border-white/10 dark:bg-white/3"
+        className="squircle overflow-hidden border border-black/10 bg-black/3 px-5 py-6 sm:px-6 dark:border-white/10 dark:bg-white/3"
       >
         {/* Header row */}
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
@@ -75,7 +75,7 @@ const GithubContributions = () => {
               <button
                 key={y}
                 onClick={() => setYear(y)}
-                className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
+                className={`squircle px-2.5 py-1 text-xs font-medium transition-colors ${
                   year === y
                     ? "bg-brand text-white"
                     : "text-black/50 hover:bg-black/8 dark:text-white/50 dark:hover:bg-white/8"
@@ -90,7 +90,7 @@ const GithubContributions = () => {
         {/* Graph area */}
         {loading ? (
           <div className="flex h-32 items-center justify-center">
-            <div className="h-5 w-5 animate-spin rounded-full border-2 border-brand border-t-transparent" />
+            <div className="border-brand h-5 w-5 animate-spin rounded-full border-2 border-t-transparent" />
           </div>
         ) : error ? (
           <div className="flex h-32 items-center justify-center text-sm text-black/40 dark:text-white/40">

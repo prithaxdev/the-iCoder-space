@@ -55,7 +55,7 @@ const Skills = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="overflow-hidden rounded-2xl border border-black/10 bg-black/3 dark:border-white/10 dark:bg-white/3"
+        className="squircle overflow-hidden border border-black/10 bg-black/3 dark:border-white/10 dark:bg-white/3"
       >
         {SKILLS.map((skill, index) => {
           const Icon = TECH_ICONS[skill.iconKey];

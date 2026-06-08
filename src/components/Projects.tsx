@@ -13,7 +13,7 @@ const ProjectLinks = ({
 }) => {
   const btnBase =
     size === "sm"
-      ? "w-full rounded-lg text-xs font-medium"
+      ? "w-full squircle text-xs font-medium"
       : "rounded-full font-semibold";
 
   return (
@@ -73,7 +73,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group overflow-hidden rounded-2xl border border-black/10 bg-black/3 shadow-lg dark:border-white/10 dark:bg-white/3"
+            className="group squircle overflow-hidden border border-black/10 bg-black/3 shadow-lg dark:border-white/10 dark:bg-white/3"
           >
             {/* ── Image ── */}
             <div className="relative aspect-video overflow-hidden">
